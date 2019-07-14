@@ -4,28 +4,41 @@
     <body>
         <h1><center>Upload pics!!!</center></h1>
         <p id="platformTag">Platform:</p>
-        <button id="getPlatform">Get platform</button>
+        <p>Name: <input type="text" id="nameInput"></p>
+        <button id="getPlatform">Get platform</button><br>
+        <button id="seeData">See all the data</button>
     </body>
     <script>
-        const platform = navigator.platform;
-        
-        const data = { platform };
-        const options = {
-            method: 'POST',
-            headers: {
-                    'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }
-        
-        document.getElementById(`getPlatform`).onclick = async () => { 
+        document.getElementById(`getPlatform`).onclick = async () => {
+
+            const outData = { 
+                platform: navigator.platform,
+                name: document.getElementById("nameInput").value
+            };
+
+            if (outData.name == "") {
+                alert("No name given!!!");
+                return;
+            }
+
+            const options = {
+                method: 'POST',
+                headers: {
+                        'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(outData)
+            }
             
-            document.getElementById(`platformTag`).textContent = `Platform: ${platform}`; 
+            document.getElementById(`platformTag`).textContent = `Platform: ${outData.platform}`; 
             
             const response = await fetch('/api', options);
-            const data = await response.json();
+            const inData = await response.json();
 
-            console.log(data);
+            console.log(inData);
+        };
+
+        document.getElementById("seeData").onclick = () => {
+            location.href = "/data.html";
         };
     </script>
 </html>
