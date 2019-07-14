@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <title>Online picture storage</title>
+    <body>
+        <h1><center>Upload pics!!!</center></h1>
+        <p id="platformTag">Platform:</p>
+        <button id="getPlatform">Get platform</button>
+    </body>
+    <script>
+        const platform = navigator.platform;
+        
+        const data = { platform };
+        const options = {
+            method: 'POST',
+            headers: {
+                    'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+        
+        document.getElementById(`getPlatform`).onclick = async () => { 
+            
+            document.getElementById(`platformTag`).textContent = `Platform: ${platform}`; 
+            
+            const response = await fetch('/api', options);
+            const data = await response.json();
+
+            console.log(data);
+        };
+    </script>
+</html>

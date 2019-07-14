@@ -1,0 +1,28 @@
+{
+  "name": "onlinepicturestorage",
+  "version": "0.0.1",
+  "description": "A service where an individual can upload images to the cloud.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrostedBiscuit/OnlinePictureStorage.git"
+  },
+  "keywords": [
+    "image",
+    "picture",
+    "service",
+    "data"
+  ],
+  "author": "Gasper Kaucic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FrostedBiscuit/OnlinePictureStorage/issues"
+  },
+  "homepage": "https://github.com/FrostedBiscuit/OnlinePictureStorage#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
