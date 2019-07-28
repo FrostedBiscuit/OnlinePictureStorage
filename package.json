@@ -2,7 +2,7 @@
   "name": "onlinepicturestorage",
   "version": "0.0.1",
   "description": "A service where an individual can upload images to the cloud.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/FrostedBiscuit/OnlinePictureStorage#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "nedb": "^1.8.0"
   }
 }

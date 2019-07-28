@@ -4,21 +4,5 @@
 
     <h1>All of the data</h1>
 
-    <script>
-        GetData();
-
-        async function GetData() {
-            const response = await fetch(`/api`);
-            const data = await response.json();
-
-            console.log(data);
-
-            for(obj of data) {
-                var element = document.createElement(`p`);
-                element.textContent = `${obj.name} is running on ${obj.platform}`;
-                
-                document.body.append(element);
-            }
-        }
-    </script>
+    <script src="data.js"></script>
 </html>

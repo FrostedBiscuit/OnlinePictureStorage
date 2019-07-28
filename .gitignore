@@ -1,3 +1,6 @@
-/node-modules
+node-modules/*
+images/*
 
 *.db
+
+pic\ storage\ concept.txt

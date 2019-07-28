@@ -5,40 +5,10 @@
         <h1><center>Upload pics!!!</center></h1>
         <p id="platformTag">Platform:</p>
         <p>Name: <input type="text" id="nameInput"></p>
-        <button id="getPlatform">Get platform</button><br>
+        <p>Image: <input type="file" accept="image/*" id="imageInput"></p>
+        <img id="preview"><br>
+        <button id="uploadData">Upload</button><br>
         <button id="seeData">See all the data</button>
     </body>
-    <script>
-        document.getElementById(`getPlatform`).onclick = async () => {
-
-            const outData = { 
-                platform: navigator.platform,
-                name: document.getElementById("nameInput").value
-            };
-
-            if (outData.name == "") {
-                alert("No name given!!!");
-                return;
-            }
-
-            const options = {
-                method: 'POST',
-                headers: {
-                        'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(outData)
-            }
-            
-            document.getElementById(`platformTag`).textContent = `Platform: ${outData.platform}`; 
-            
-            const response = await fetch('/api', options);
-            const inData = await response.json();
-
-            console.log(inData);
-        };
-
-        document.getElementById("seeData").onclick = () => {
-            location.href = "/data.html";
-        };
-    </script>
+    <script src="index.js"></script>
 </html>
